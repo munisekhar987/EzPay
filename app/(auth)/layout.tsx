@@ -11,9 +11,9 @@ export default function RootLayout({
       <div className="auth-asset">
         <div>
           <Image 
-            src="/icons/auth-image.svg"
+            src="/icons/ezpaywal.jpg"
             alt="Auth image"
-            width={500}
+            width={1000}
             height={500}
             className="rounded-l-xl object-contain"
           />
