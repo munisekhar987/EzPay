@@ -63,24 +63,36 @@ declare type Account = {
   shareableId: string;
 };
 
+// declare type Transaction = {
+//   id: string;
+//   $id: string;
+//   name: string;
+//   paymentChannel: string;
+//   type: string;
+//   accountId: string;
+//   amount: number;
+//   pending: boolean;
+//   category: string;
+//   date: string;
+//   image: string;
+//   type: string;
+//   $createdAt: string;
+//   channel: string;
+//   senderBankId: string;
+//   receiverBankId: string;
+// };
+
 declare type Transaction = {
-  id: string;
-  $id: string;
-  name: string;
-  paymentChannel: string;
-  type: string;
-  accountId: string;
-  amount: number;
-  pending: boolean;
-  category: string;
-  date: string;
-  image: string;
-  type: string;
-  $createdAt: string;
-  channel: string;
-  senderBankId: string;
-  receiverBankId: string;
+  transaction_id: string; // Corresponds to 'transaction_id' (Long type in Java)
+  sender_id: string;      // Corresponds to 'sender_id' (String type in Java)
+  receiver_id: string;    // Corresponds to 'receiver_id' (String type in Java)
+  transaction_amount: number;  // Corresponds to 'transaction_amount' (Double type in Java)
+  sender_email: string;   // Corresponds to 'sender_email' (String type in Java)
+  receiver_email: string; // Corresponds to 'receiver_email' (String type in Java)
+  transaction_time: string;   // Corresponds to 'transaction_time' (LocalDateTime type in Java)
+  transact_type: string;  // Corresponds to 'transact_type' (String type in Java)
 };
+
 
 declare type Bank = {
   $id: string;
@@ -204,8 +216,6 @@ declare interface BankTabItemProps {
 }
 
 declare interface TotalBalanceBoxProps {
-  accounts: Account[];
-  totalBanks: number;
   totalCurrentBalance: number;
 }
 
@@ -217,7 +227,6 @@ declare interface FooterProps {
 declare interface RightSidebarProps {
   user: User;
   transactions: Transaction[];
-  banks: Bank[] & Account[];
 }
 
 declare interface SiderbarProps {
@@ -225,9 +234,9 @@ declare interface SiderbarProps {
 }
 
 declare interface RecentTransactionsProps {
-  accounts: Account[];
-  transactions: Transaction[];
-  appwriteItemId: string;
+  accounts: Transaction[];
+  // transactions: Transaction[];
+  // appwriteItemId: string;
   page: number;
 }
 
@@ -241,7 +250,7 @@ declare interface CategoryBadgeProps {
 }
 
 declare interface TransactionTableProps {
-  transactions: Transaction[];
+  accounts: Transaction[];
 }
 
 declare interface CategoryProps {
@@ -301,6 +310,11 @@ declare interface signInProps {
 
 declare interface getUserInfoProps {
   userId: string;
+}
+declare interface getTransferPayment {
+  transaction_amount: double;
+  receiver_email: string; 
+  sender_email: string
 }
 
 declare interface exchangePublicTokenProps {

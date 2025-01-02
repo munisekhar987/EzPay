@@ -5,8 +5,44 @@ import BankCard from './BankCard'
 import { countTransactionCategories } from '@/lib/utils'
 import Category from './Category'
 
-const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
+const RightSidebar = ({ user, transactions }: RightSidebarProps) => {
   const categories: CategoryCount[] = countTransactionCategories(transactions);
+
+  // Dummy Bank Data
+  // Dummy Bank Data
+  // Dummy Bank Data
+  const banks = [
+    {
+      $id: '1',
+      name: 'Bank of Example 1',
+      currentBalance: 1200.50,
+      appwriteItemId: 'appwrite-item-1',
+      mask: '1234 5678 9876 5432',
+      shareableId: 'bank-1-shareable-id',
+      id: 'bank-1-id',
+      availableBalance: 1200.50,
+      officialName: 'Bank of Example 1 Official',
+      institutionId: 'bank-1-institution-id',
+      type: 'checking', // Add type
+      subtype: 'personal' // Add subtype
+    },
+    {
+      $id: '2',
+      name: 'Bank of Example 2',
+      currentBalance: 3500.75,
+      appwriteItemId: 'appwrite-item-2',
+      mask: '4321 8765 6789 1234',
+      shareableId: 'bank-2-shareable-id',
+      id: 'bank-2-id',
+      availableBalance: 3500.75,
+      officialName: 'Bank of Example 2 Official',
+      institutionId: 'bank-2-institution-id',
+      type: 'savings', // Add type
+      subtype: 'joint' // Add subtype
+    }
+  ];
+
+
 
   return (
     <aside className="right-sidebar">

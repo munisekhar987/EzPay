@@ -5,7 +5,7 @@ from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip , Legend );
 
-const DoughnutChart = ({ accounts }: DoughnutChartProps) => {
+const DoughnutChart = () => {
     const data = {
         datasets: [
             {

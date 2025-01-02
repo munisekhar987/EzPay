@@ -56,6 +56,7 @@ const AuthForm = ({ type }: { type: string }) => {
         };
 
         await signUp(userData);
+        console.log('Sign-up successful');
       }
 
       if (type === 'sign-in') {
@@ -63,12 +64,18 @@ const AuthForm = ({ type }: { type: string }) => {
           email: data.email,
           password: data.password,
         });
+        console.log('Sign-in successful, redirecting...');
       }
 
-      // Redirect to the homepage on success
-      router.push('/');
+      // Ensure the router is available before redirecting
+      if (router) {
+        console.log("sasasas im here before reroute");
+        router.push('/');
+      } else {
+        console.error('Router is not defined');
+      }
     } catch (error) {
-      console.error(error);
+      console.error('Error during authentication:', error);
     } finally {
       setIsLoading(false);
     }
