@@ -56,6 +56,8 @@ const AuthForm = ({ type }: { type: string }) => {
         };
 
         await signUp(userData);
+        console.log("after signUp")
+        console.log(userData);
         console.log('Sign-up successful');
       }
 

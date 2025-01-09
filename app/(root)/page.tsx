@@ -10,6 +10,7 @@ const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   console.log("Onnnnnnnn home page -----------------------")
   const loggedIn = await getLoggedInUser();
   console.log("sucessasasasas--------0900")
+  
 
   const accounts = await getTransactionsByUserId(loggedIn.userid)
 

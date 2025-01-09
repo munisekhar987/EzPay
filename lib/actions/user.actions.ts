@@ -17,7 +17,7 @@ import { addFundingSource, createDwollaCustomer } from "./dwolla.actions";
 
 
 // Base URL for backend API
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:9090';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://ezpay.msgnaa.info:9090';
 
 
 export const transferPayment = async ({ transaction_amount, receiver_email, sender_email } :getTransferPayment) => {
